@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf $0
+#rm -rf $0
 
 red='\033[0;31m'
 green='\033[0;32m'
@@ -183,7 +183,7 @@ install_XrayR() {
     
     # Writing json
     echo "正在尝试写入配置文件..."
-    wget https://cdn.jsdelivr.net/gh/missuo/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
+    wget https://cdn.jsdelivr.net/gh/JuValka/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
     echo ""
@@ -217,9 +217,7 @@ install_XrayR() {
     echo "XrayR version            - 查看 XrayR 版本"
     echo "------------------------------------------"
     echo "One-Step Script Based on XrayR-Release"
-    echo "Telegram: https://t.me/missuo"
-    echo "Github: https://github.com/missuo/XrayR-V2Board"
-    echo "Powered by Vincent"
+    echo "Github: https://github.com/JuValka/XrayR-V2Board"
 }
 
 echo -e "${green}开始安装${plain}"
