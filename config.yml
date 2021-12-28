@@ -15,7 +15,7 @@ Nodes:
       EnableVless: false # Enable Vless for V2ray Type, Remote configuration first
       EnableXTLS: false # Enable XTLS for V2ray and Trojan, emote configuration first
     ControllerConfig:
-      ListenIP: 0.0.0.0 # IP address you want to listen
+      ListenIP: :: # IP address you want to listen
       UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
       EnableDNS: false # Use custom DNS config, Please ensure that you set the dns.json well
       CertConfig:
