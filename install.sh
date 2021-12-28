@@ -101,14 +101,14 @@ install_XrayR() {
             exit 1
         fi
         echo -e "检测到 XrayR 最新版本：${last_version}，开始安装"
-        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux-64.zip https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip
+        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux-64.zip https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 XrayR 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
         fi
     else
         last_version=$1
-        url="https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip"
+        url="https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip"
         echo -e "开始安装 XrayR v$1"
         wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux-64.zip ${url}
         if [[ $? -ne 0 ]]; then
@@ -122,7 +122,7 @@ install_XrayR() {
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
-    file="https://github.com/XrayR-project/XrayR-release/raw/master/XrayR.service"
+    file="https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/XrayR-project/XrayR-release/raw/master/XrayR.service"
     wget -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}
     #cp -f XrayR.service /etc/systemd/system/
     systemctl daemon-reload
@@ -152,7 +152,7 @@ install_XrayR() {
         cp dns.json /etc/XrayR/
     fi
     
-    curl -o /usr/bin/XrayR -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh
+    curl -o /usr/bin/XrayR -Ls https://shrill-pond-3e81.hunsh.workers.dev/https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh
     chmod +x /usr/bin/XrayR
     
     # 设置节点序号
@@ -183,7 +183,7 @@ install_XrayR() {
     
     # Writing json
     echo "正在尝试写入配置文件..."
-    wget https://cdn.jsdelivr.net/gh/JuValka/XrayR-V2Board/config.yml -O /etc/XrayR/config.yml
+    wget https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/JuValka/XrayR-V2Board/blob/main/config.yml -O /etc/XrayR/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
     echo ""
@@ -196,7 +196,7 @@ install_XrayR() {
     systemctl stop firewalld
     echo "XrayR服务已经完成重启，请愉快地享用！"
     echo
-    #curl -o /usr/bin/XrayR-tool -Ls https://raw.githubusercontent.com/XrayR-project/XrayR/master/XrayR-tool
+    #curl -o /usr/bin/XrayR-tool -Ls https://shrill-pond-3e81.hunsh.workers.dev/https://raw.githubusercontent.com/XrayR-project/XrayR/master/XrayR-tool
     #chmod +x /usr/bin/XrayR-tool
     echo -e ""
     echo "XrayR 管理脚本使用方法: "
